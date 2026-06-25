@@ -1,0 +1,160 @@
+/* ============================================================
+   dark-patches.css
+   Imported in main.tsx after index.css.
+   Only overrides backgrounds — does NOT override text colors
+   globally (that caused white-text-on-white-card unreadability).
+   ============================================================ */
+
+/* ---- Make any remaining white card surfaces dark ---- */
+
+/* Broad catch-all for divs that have white/light inline backgrounds.
+   CSS cannot override inline styles without !important so we target
+   common component patterns by class name. */
+
+/* ---- Job cards (Jobs page + Saved page) ---- */
+.job-card,
+.job-item,
+.job-listing,
+.job-result,
+[class*="job-card"],
+[class*="jobCard"] {
+  background: var(--surface-card) !important;
+  border: 1px solid var(--border-default) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ---- Filter panels ---- */
+.filter-sidebar,
+.filter-panel,
+.filters-panel,
+.sidebar,
+[class*="filter-panel"],
+[class*="filterPanel"],
+[class*="sidebar"] {
+  background: var(--surface-card) !important;
+  border-color: var(--border-default) !important;
+}
+
+/* ---- Kanban / Tracker cards ---- */
+.kanban-card,
+.tracker-card,
+.application-card,
+.kanban-item,
+[class*="kanban-card"],
+[class*="kanbanCard"],
+[class*="tracker-card"],
+[class*="trackerCard"] {
+  background: var(--surface-card) !important;
+  border: 1px solid var(--border-default) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ---- Pricing / plan cards ---- */
+.pricing-card,
+.plan-card,
+.tier-card,
+[class*="pricing-card"],
+[class*="pricingCard"],
+[class*="plan-card"],
+[class*="planCard"] {
+  background: var(--surface-card) !important;
+  border: 1px solid var(--border-default) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Active/featured plan */
+.pricing-card.active,
+.pricing-card.featured,
+.pricing-card.popular,
+.plan-card.active,
+.plan-card.featured {
+  border-color: var(--primary-border) !important;
+  background: linear-gradient(135deg,
+    rgba(99,102,241,0.08),
+    var(--surface-card)) !important;
+}
+
+/* ---- Profile sections ---- */
+.profile-section,
+.profile-card,
+.profile-panel,
+[class*="profile-section"],
+[class*="profileSection"] {
+  background: var(--surface-card) !important;
+  border: 1px solid var(--border-default) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ---- Generic panels / sections that might be white ---- */
+.panel,
+.section-card,
+.content-card,
+.info-panel,
+[class*="-section"]:not(.login-page):not(.app-layout) {
+  background-color: var(--surface-card);
+  border-color: var(--border-default);
+}
+
+/* ---- Modal overlays ---- */
+.modal-overlay,
+.overlay,
+.backdrop {
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+.modal,
+.modal-content,
+.dialog,
+[class*="-modal"],
+[class*="Modal"] {
+  background: var(--surface-elevated) !important;
+  border: 1px solid var(--border-default) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ---- Tables ---- */
+table {
+  background: var(--surface-card);
+}
+th {
+  background: var(--surface-elevated) !important;
+  color: var(--text-secondary) !important;
+  border-color: var(--border-default) !important;
+}
+td {
+  border-color: var(--border-default) !important;
+  color: var(--text-primary) !important;
+}
+tr:hover td {
+  background: var(--surface-hover) !important;
+}
+
+/* ---- Ensure page-level text is always readable ---- */
+/* These are the actual readable body text values */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--gray-900);
+}
+
+p {
+  color: var(--gray-800);
+}
+
+/* Labels stay readable */
+label {
+  color: var(--text-secondary);
+}
+
+/* ---- Dividers ---- */
+hr {
+  border-color: var(--border-default);
+  opacity: 1;
+}
+
+/* ---- Dropdown menus ---- */
+.dropdown-menu,
+[class*="dropdown-menu"],
+[class*="dropdownMenu"] {
+  background: var(--surface-elevated) !important;
+  border-color: var(--border-default) !important;
+  color: var(--text-primary) !important;
+}

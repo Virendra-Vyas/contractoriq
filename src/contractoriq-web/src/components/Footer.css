@@ -1,0 +1,169 @@
+/* ============================================================
+   Footer.css — ContractorIQ footer
+   ============================================================ */
+
+.footer {
+  border-top: 1px solid #1a2535;
+  background: rgba(6, 9, 18, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin-top: auto;
+}
+
+/* ---- Main grid ---- */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 56px 48px 48px;
+}
+
+/* ---- Brand column ---- */
+.footer-logo {
+  display: inline-block;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #818cf8;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  transition: color 0.15s;
+}
+
+.footer-logo:hover { color: #a5b4fc; }
+
+.footer-tagline {
+  font-size: 13px;
+  color: #4b5e78;
+  line-height: 1.7;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.footer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #5e7a99;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #1a2535;
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+
+.footer-pill i { font-size: 12px; }
+
+/* ---- Link columns ---- */
+.footer-col-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8fa3bf;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  font-size: 13px;
+  color: #4b5e78;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-link:hover { color: #c8d8ea; }
+
+.footer-link-plain {
+  font-size: 13px;
+  color: #4b5e78;
+}
+
+/* ---- Bottom bar ---- */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 48px;
+  border-top: 1px solid #111d2e;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #3d526b;
+}
+
+.footer-sep {
+  color: #1e2d42;
+  font-size: 14px;
+}
+
+.footer-bottom-right { flex-shrink: 0; }
+
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #3d526b;
+}
+
+.footer-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+  flex-shrink: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 960px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    padding: 40px 32px 36px;
+  }
+  .footer-brand { grid-column: span 2; }
+  .footer-bottom { padding: 16px 32px; }
+}
+
+@media (max-width: 560px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    padding: 32px 20px 28px;
+    gap: 28px;
+  }
+  .footer-brand { grid-column: span 2; }
+  .footer-tagline { max-width: 100%; }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,29 @@
+/* ============================================================
+   Layout.css — full-page shell
+   ============================================================ */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* Base dark */
+  background-color: #060912;
+
+  /* Signature indigo glow from top — the one thing that
+     separates "dull dark app" from "premium SaaS" */
+  background-image:
+    radial-gradient(ellipse 90% 45% at 50% -5%,
+      rgba(99, 102, 241, 0.18) 0%,
+      transparent 70%),
+    radial-gradient(ellipse 40% 25% at 85% 15%,
+      rgba(16, 185, 129, 0.06) 0%,
+      transparent 60%);
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

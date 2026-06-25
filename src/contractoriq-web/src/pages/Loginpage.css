@@ -1,0 +1,196 @@
+/* ============================================================
+   LoginPage.css — ContractorIQ sign in
+   ============================================================ */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #070a12;
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% 0%,
+      rgba(99, 102, 241, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 30% at 80% 80%,
+      rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+  padding: 24px;
+}
+
+/* ---- Card ---- */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(13, 21, 37, 0.85);
+  border: 1px solid #1a2d44;
+  border-radius: 18px;
+  padding: 44px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle top shimmer */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,0.1) 40%,
+    rgba(255,255,255,0.15) 50%,
+    rgba(255,255,255,0.1) 60%,
+    transparent);
+}
+
+/* ---- Brand ---- */
+.login-brand {
+  margin-bottom: 28px;
+}
+
+.login-logo {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #818cf8;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+
+.login-tagline {
+  font-size: 14px;
+  color: #4b5e78;
+  margin: 0;
+}
+
+/* ---- Error banner ---- */
+.login-error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 13px;
+  color: #f87171;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Form ---- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #7a9ab8;
+  letter-spacing: 0.02em;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #060912;
+  border: 1px solid #1e2d42;
+  border-radius: 9px;
+  color: #e2e8f0;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.login-input::placeholder { color: #3d526b; }
+
+/* Autofill — scoped to login specifically */
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover,
+.login-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 100px #060912 inset !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  caret-color: #e2e8f0;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ---- Submit button ---- */
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+}
+
+.login-btn:hover {
+  background: #5558e8;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+.login-btn:active { transform: scale(0.99); }
+
+.login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---- Footer link ---- */
+.login-footer-text {
+  text-align: center;
+  font-size: 13px;
+  color: #4b5e78;
+  margin-top: 22px;
+}
+
+.login-footer-text a {
+  color: #818cf8;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.login-footer-text a:hover { color: #a5b4fc; }
+
+/* ---- Feature pills (optional trust signals) ---- */
+.login-features {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #1a2d44;
+  flex-wrap: wrap;
+}
+
+.login-feature-pill {
+  font-size: 11px;
+  color: #3d526b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-feature-pill i { font-size: 13px; }

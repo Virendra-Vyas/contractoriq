@@ -1,0 +1,1 @@
+UPDATE "Subscriptions" SET "Tier" = 'individual', "Status" = 'active', "UpdatedAt" = NOW() WHERE "UserId" = (SELECT "Id" FROM "Users" WHERE "Email" = 'virendra@yugsolutions.co.uk');

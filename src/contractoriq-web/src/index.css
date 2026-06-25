@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap');
+
+/* ============================================================
+   index.css — ContractorIQ (dark theme, high contrast)
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Design tokens ---- */
+:root {
+  /* Brand */
+  --primary:        #6366f1;
+  --primary-dark:   #4f46e5;
+  --primary-light:  rgba(99, 102, 241, 0.12);
+  --primary-border: rgba(99, 102, 241, 0.3);
+
+  /* Status */
+  --success:     #10b981;
+  --success-bg:  rgba(16, 185, 129, 0.1);
+  --warning:     #f59e0b;
+  --warning-bg:  rgba(245, 158, 11, 0.1);
+  --danger:      #ef4444;
+  --danger-bg:   rgba(239, 68, 68, 0.1);
+  --info:        #818cf8;
+  --info-bg:     rgba(99, 102, 241, 0.1);
+
+  /* IR35 */
+  --outside:     #10b981;
+  --outside-bg:  rgba(16, 185, 129, 0.1);
+  --inside:      #ef4444;
+  --inside-bg:   rgba(239, 68, 68, 0.1);
+  --unknown:     #64748b;
+  --unknown-bg:  rgba(100, 116, 139, 0.1);
+
+  /* ---- Gray scale — dark theme ----
+     Low numbers = darkest surfaces / backgrounds
+     High numbers = lightest (readable text)
+
+     KEY CONTRAST VALUES:
+     600+ are readable on dark backgrounds
+     500 and below = use for decorative/disabled only  */
+
+  --gray-50:   #070a12;    /* page background (very dark) */
+  --gray-100:  #0d1525;    /* card surface */
+  --gray-200:  #192236;    /* elevated card */
+  --gray-300:  #1e2d42;    /* border */
+  --gray-400:  #2d4261;    /* strong border / disabled */
+  --gray-500:  #4a6280;    /* decorative only — low contrast */
+  --gray-600:  #7a95b2;    /* tertiary text — readable */
+  --gray-700:  #a8bfd4;    /* secondary text — clearly readable */
+  --gray-800:  #d4e3f0;    /* primary body text — high contrast */
+  --gray-900:  #f0f6fc;    /* headings / emphasis — max contrast */
+
+  /* Named surface aliases */
+  --surface-page:     #070a12;
+  --surface-card:     #0d1525;
+  --surface-elevated: #192236;
+  --surface-hover:    #1a2840;
+  --border-default:   #1e2d42;
+  --border-emphasis:  #2d4261;
+
+  /* Text — use these going forward */
+  --text-primary:   #d4e3f0;   /* Body text — clearly readable */
+  --text-secondary: #8fa8c0;   /* Labels, metadata */
+  --text-tertiary:  #506070;   /* Placeholders, disabled */
+
+  /* Typography */
+  --font-sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-brand: 'Outfit', var(--font-sans);
+  --font-mono:  'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* ---- Base ---- */
+body {
+  font-family: var(--font-sans);
+  background: var(--gray-50);
+  color: var(--gray-800);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ---- Global form dark styling ---- */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="button"]):not([type="file"]),
+select,
+textarea {
+  background-color: var(--surface-page);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  border-radius: 8px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="button"]):not([type="file"]):focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+select option {
+  background: var(--surface-card);
+  color: var(--text-primary);
+}
+
+/* ---- Autofill — kills the browser yellow/light tint ---- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 100px #070a12 inset !important;
+  -webkit-text-fill-color: #d4e3f0 !important;
+  caret-color: #d4e3f0;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ---- Checkboxes ---- */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ---- Focus ---- */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: var(--gray-900);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--gray-400); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gray-500); }

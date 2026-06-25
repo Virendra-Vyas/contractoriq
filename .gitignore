@@ -1,0 +1,33 @@
+﻿# Python
+src/contractoriq-scraper/.venv/
+src/contractoriq-scraper/**/__pycache__/
+src/contractoriq-scraper/**/*.pyc
+
+# Docker volumes
+docker/volumes/
+
+# Uploaded files
+ContractorIQ.API/uploads/
+
+# Secrets
+.env
+*.env
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+
+# Build output
+**/bin/
+**/obj/
+
+# Node
+node_modules/
+
+# IDE
+.vs/
+.vscode/
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
